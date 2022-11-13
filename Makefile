@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-.PHONY: clean build deploy dev preview
+.PHONY: clean build deploy dev preview build_and_preview
 
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := build_and_preview
 
 clean:
 	rm -rf _build/
@@ -15,5 +15,7 @@ deploy:
 dev:
 	pip install -r requirements.txt
 
-preview: build
+preview:
 	open _build/html/index.html
+
+build_and_preview: build preview
